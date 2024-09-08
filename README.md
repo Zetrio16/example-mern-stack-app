@@ -1,44 +1,21 @@
-# Example MERN Stack
-
-This repo provides a simple MERN stack application to be used in containerization demos. It is intended to NOT be a containerized application, but will be converted as part of demos.
-
-## Architecture
-
-This particular application is composed of an Express backend with a React frontend. Data is persisted in a Mongo database. Hence the MERN stack name.
-
-The Express backend is configured to serve static content, allowing the React application to be bundled and deployed with the backend. But, they remain in separate codebases because development for each uses different tooling.
-
-## Development
-
-### A database
-
-This application requires Mongo. If you haven't yet, install it and then start a database.
+This repo contains a 'docker-compose.yml' file that allows you to simply run:
 
 ```
-mongod
-```
 
-### The backend
-
-To start the backend, run the following in the `backend` directory:
+docker compose up -d
 
 ```
-yarn install
-yarn dev
-```
 
-The backend runs on [localhost:4000](http://localhost:4000)
+back end is available at http://localhost/4000 and the front end is at http://localhost/3000.
 
-### The frontend
 
-To start the frontend, run the following in the `client` directory:
+When you are done, simply run:
 
 ```
-yarn install
-yarn start
-```
 
-The react app will start on [localhost:3000](http://localhost:3000).
+docker compose down 
+
+```
 
 
 ## Deploying

@@ -4,7 +4,7 @@ let client, db, collection;
 
 async function init() {
   const host = process.env.MONGO_HOST || "localhost";
-  const url = `mongodb://${host}:27017`;
+  const url = `mongodb://${host}:27017/`;
   
   client = new MongoClient(url);
   const dbName = 'todo';

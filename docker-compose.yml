@@ -1,0 +1,30 @@
+services:
+  mongo:
+    image: mongo
+    volumes:
+      - mongo-data:/data/db
+  backend:
+    build:
+      context: ./
+      target: development
+    volumes:
+      - ./backend:/usr/local/app
+    ports: 
+      - 4000:4000
+    environment:
+      MONGO_HOST: mongo
+  client:
+    build:
+      context: ./
+      target: development
+    volumes:
+      - ./client:/usr/local/app
+      - ~/.yarn:/root/.yarn
+    ports:
+      - 3000:3000
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+volumes:
+  mongo-data:

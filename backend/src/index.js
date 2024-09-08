@@ -11,6 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname + '/static'));
 
+// app.get('/workshop', (req, res) => { res.send({message : "Hello world!"})});
 app.get('/items', getItems);
 app.post('/items', addItem);
 app.put('/items/:id', updateItem);
